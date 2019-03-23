@@ -16,8 +16,10 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.TextView
 import com.divyanshu.draw.activity.DrawingActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.w3c.dom.Text
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getFilesPath(): ArrayList<String>{
         val resultList = ArrayList<String>()
-        val imageDir = "${Environment.DIRECTORY_PICTURES}/Android Draw/"
+        val imageDir = "${Environment.DIRECTORY_PICTURES}/Are you looking for me;)/"
         val path = Environment.getExternalStoragePublicDirectory(imageDir)
         path.mkdirs()
         val imageList = path.listFiles()
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         val filename = UUID.randomUUID().toString()
         fileNameEditText.setSelectAllOnFocus(true)
         fileNameEditText.setText(filename)
-        alertDialog.setTitle("Save Drawing")
+        alertDialog.setTitle(getString(R.string.save_tile))
             .setPositiveButton("ok") { _, _ -> saveImage(bitmap,fileNameEditText.text.toString()) }
             .setNegativeButton("Cancel") { _, _ -> }
 
@@ -104,7 +106,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveImage(bitmap: Bitmap, fileName: String) {
-        val imageDir = "${Environment.DIRECTORY_PICTURES}/Android Draw/"
+        val imageDir = "${Environment.DIRECTORY_PICTURES}/Are you looking for me;)/"
         val path = Environment.getExternalStoragePublicDirectory(imageDir)
         Log.e("path",path.toString())
         val file = File(path, "$fileName.png")

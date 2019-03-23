@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">bruisibility</string>
+    <string name="app_name">brusbility</string>
     <string name="enter_file_name">Enter file name</string>
+    <string name="save_tile">Save Drawing</string>
 </resources>
